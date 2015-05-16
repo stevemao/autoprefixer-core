@@ -81,6 +81,9 @@ There are 2 options:
   queries and default value.
 * `cascade` (boolean): should Autoprefixer uses [Visual Cascade],
   if CSS will be uncompressed.
+* `add` (boolean): should Autoprefixer add prefixes. Default is `true`.
+* `remove` (boolean): should Autoprefixer remove outdated prefixes.
+  Default is `true`.
 
 Processor object had:
 
@@ -168,21 +171,6 @@ It is useful for legacy code when using several hacks, or interactive
 tools with live input, like [Autoprefixer demo].
 
 [Autoprefixer demo]: http://simevidas.jsbin.com/gufoko/quiet
-
-## Cleaning
-
-By default, Autoprefixer not only add new prefixes, but also remove outdated.
-You can remove this behaviour by `remove: false` option:
-
-```js
-autoprefixer()
-  .process('a { -webkit-border-radius: 2px; border-radius: 2px }');
-// remove outdated -webkit-border-radius
-
-autoprefixer({ remove: false })
-  .process('a { -webkit-border-radius: 2px; border-radius: 2px }');
-// keeps -webkit-border-radius
-```
 
 ## Debug
 
